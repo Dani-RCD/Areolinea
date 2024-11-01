@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Gestionar Vuelos</title>
+</head>
+<body>
+    <h1>Gestión de Vuelos</h1>
+    <nav>
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('gestionar_reservas') }}">Gestionar Reservas</a>
+        <a href="{{ url_for('agregar_vuelo') }}">Agregar Vuelo</a>
+    </nav>
+
+    <h2>Agregar Nuevo Vuelo</h2>
+    <form method="POST" action="{{ url_for('gestionar_vuelos') }}">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.origen.label }}<br>
+            {{ form.origen(size=32) }}<br>
+            {% for error in form.origen.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.destino.label }}<br>
+            {{ form.destino(size=32) }}<br>
+            {% for error in form.destino.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.fecha.label }}<br>
+            {{ form.fecha() }}<br>
+            {% for error in form.fecha.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.capacidad.label }}<br>
+            {{ form.capacidad() }}<br>
+            {% for error in form.capacidad.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    <h2>Lista de Vuelos</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>Capacidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vuelo in vuelos %}
+            <tr>
+                <td>{{ vuelo.id }}</td>
+                <td>{{ vuelo.origen }}</td>
+                <td>{{ vuelo.destino }}</td>
+                <td>{{ vuelo.fecha }}</td>
+                <td>{{ vuelo.capacidad }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

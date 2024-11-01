@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #00796b;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #004d40;
+        }
+        .menu {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .menu a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .menu a:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a Aerolinea Carrillo</h1>
+    <div class="menu">
+        <a href="{{ url_for('gestionar_vuelos') }}">Gestionar Vuelos</a>
+        <a href="{{ url_for('gestionar_reservas') }}">Gestionar Reservas</a>
+        <a href="{{ url_for('cerrar_sesion') }}">Cerrar Sesión</a>
+    </div>
+</body>
+</html>

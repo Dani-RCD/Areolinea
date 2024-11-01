@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Vuelos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='es_gestion_vuelos.css') }}"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Gestionar Vuelos</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="operador">Operador</label>
+                <input type="text" name="operador" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="matricula">Matrícula del avión</label>
+                <input type="text" name="matricula" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="salida">Salida de</label>
+                <input type="text" name="salida" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_salida">Fecha de salida</label>
+                <input type="date" name="fecha_salida" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="hora_salida">Hora de salida</label>
+                <input type="time" name="hora_salida" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo_vuelo">Tipo de vuelo</label>
+                <select name="tipo_vuelo" class="form-control" required>
+                    <option value="privado">Privado</option>
+                    <option value="comercial">Comercial</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="llegada">Llegada a</label>
+                <input type="text" name="llegada" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_llegada">Fecha de llegada</label>
+                <input type="date" name="fecha_llegada" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="modo_vuelo">Modo de vuelo</label>
+                <select name="modo_vuelo" class="form-control" required>
+                    <option value="redondo">Redondo</option>
+                    <option value="solo">Solo vuelo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Agregar Vuelo" class="btn btn-primary">
+            </div>
+        </form>
+
+        <h3>Vuelos</h3>
+        <ul>
+            {% for vuelo in vuelos %}
+                <li>
+                    <strong>Operador:</strong> {{ vuelo.operador }}<br>
+                    <strong>Matrícula:</strong> {{ vuelo.matricula }}<br>
+                    <strong>Precio:</strong> {{ vuelo.precio }}<br>
+                    <strong>Salida de:</strong> {{ vuelo.salida }}<br>
+                    <strong>Fecha de Salida:</strong> {{ vuelo.fecha_salida }}<br>
+                    <strong>Hora de Salida:</strong> {{ vuelo.hora_salida }}<br>
+                    <strong>Tipo de Vuelo:</strong> {{ vuelo.tipo_vuelo }}<br>
+                    <strong>Llegada a:</strong> {{ vuelo.llegada }}<br>
+                    <strong>Fecha de Llegada:</strong> {{ vuelo.fecha_llegada }}<br>
+                    <strong>Modo de Vuelo:</strong> {{ vuelo.modo_vuelo }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
