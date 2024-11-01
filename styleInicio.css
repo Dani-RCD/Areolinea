@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #e0f7fa, #80deea); /* Degradado de fondo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco con un poco de transparencia */
+    padding: 40px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    text-align: center;
+    width: 90%; /* Ancho responsivo */
+    max-width: 400px; /* Ancho máximo */
+}
+
+.user-icon {
+    width: 100px; /* Tamaño del icono de usuario */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+h1 {
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 2em; /* Tamaño de fuente del título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra suave para el título */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espaciado entre campos del formulario */
+    text-align: left; /* Alinear etiquetas a la izquierda */
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff; /* Cambio de color en el enfoque */
+    outline: none; /* Sin contorno por defecto */
+}
+
+.error {
+    color: red; /* Color para errores */
+    font-size: 0.9em; /* Tamaño de fuente para errores */
+}
+
+button, input[type="submit"] {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Color de los enlaces */
+    font-weight: bold; /* Negrita en los enlaces */
+    margin-top: 10px; /* Margen superior */
+    display: inline-block; /* Mostrar como bloque para margen */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado en el hover */
+}

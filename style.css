@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../static/bienvendo.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinear desde el inicio */
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.header {
+    background: linear-gradient(to bottom right, rgba(30, 144, 255, 0.9), rgba(60, 179, 113, 0.9)); /* Degradado azul y verde */
+    width: 100%; /* Ocupa todo el ancho de la página */
+    padding: 30px 20px; /* Ajuste en el padding */
+    border-radius: 0 0 20px 20px; /* Esquinas redondeadas en la parte inferior */
+    display: flex;
+    flex-direction: row; /* Alinear logo y título en fila */
+    align-items: center; /* Alinear los elementos verticalmente */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.logo {
+    margin-right: 20px; /* Espacio entre el logo y el texto */
+    width: 200px; /* Aumentar tamaño del logo */
+}
+
+h1 {
+    font-size: 3em; /* Ajuste en el tamaño del texto del encabezado */
+    margin: 0; /* Eliminar margen superior */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Colocar botones en una columna */
+    align-items: center; /* Centrar botones */
+    justify-content: center; /* Centrar verticalmente */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(30, 144, 255, 0.9); /* Color de fondo azul */
+    padding: 15px 30px; /* Hacer botones más grandes */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+    margin: 10px; /* Espacio entre botones */
+    font-size: 1.2em; /* Tamaño de fuente más grande */
+    border: 2px solid white; /* Marco blanco alrededor del botón */
+}
+
+a:hover {
+    background-color: rgba(30, 144, 255, 1); /* Color más intenso al pasar el mouse */
+    border-color: rgba(60, 179, 113, 1); /* Cambio de color del marco al pasar el mouse */
+}
